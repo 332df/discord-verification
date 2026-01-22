@@ -1,0 +1,12 @@
+body { background-color: #313338; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+.auth-container, .authorize-box { background: #2b2d31; padding: 30px; border-radius: 8px; width: 350px; text-align: center; }
+.logo { width: 100px; margin-bottom: 10px; }
+h2 { font-size: 20px; margin: 5px 0; }
+.subtitle { color: #b5bac1; font-size: 14px; margin-bottom: 20px; }
+label { display: block; text-align: left; color: #b5bac1; font-size: 11px; font-weight: bold; margin: 10px 0 5px; }
+input { width: 100%; padding: 10px; background: #1e1f22; border: none; border-radius: 4px; color: white; box-sizing: border-box; }
+button { width: 100%; padding: 12px; background: #5865f2; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+.pfp-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 15px; }
+.user-pfp, .bot-pfp { width: 60px; height: 60px; border-radius: 50%; }
+.dots { color: #4e5058; font-size: 24px; }
+.permissions { text-align: left; background: #232428; padding: 10px; border-radius: 5px; margin-top: 20px; font-size: 13px; }

